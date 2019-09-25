@@ -39,13 +39,6 @@ guessBtn.addEventListener("click", () => {
 
     gameOver(true, `${winningNum} is correct, YOU WIN!`)
 
-    // Game over won
-    // // Disable input
-    // guessInput.disabled = true;
-    // // Change border color
-    // guessInput.style.borderColor = "green";
-    // // Set message
-    // setMessage(`${winningNum} is correct, YOU WIN!`, "green");
   } else {
     // Wrong number
     guessesLeft -= 1;
@@ -55,15 +48,6 @@ guessBtn.addEventListener("click", () => {
 
       gameOver(false, `Game over, you lost. The correct number was ${winningNum}`)
 
-      // // Disable input
-      // guessInput.disabled = true;
-      // // Change border color
-      // guessInput.style.borderColor = "red";
-      // // Set message
-      // setMessage(
-      //   `Game over, you lost. The correct number was ${winningNum}`,
-      //   "red"
-      // );
     } else {
       // Game continues - answer wrong
 
@@ -95,6 +79,10 @@ function gameOver(won, msg) {
   message.style.color = color;
   // Set message
   setMessage(msg);
+
+  // Play Again?
+  guessBtn.value = 'Play Again';
+  guessBtn.className += 'play-again';
 }
 
 // set message
