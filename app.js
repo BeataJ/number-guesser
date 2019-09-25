@@ -25,4 +25,9 @@ const game = document.querySelector('#game'),
 minNum.textContent = min;
 maxNum.textContent = max;
 
-    
+//Listen for guess
+guessBtn.addEventListener('click', () => {
+  let guess = parseInt(guessInput.value);
+
+  console.log(guess);
+})
