@@ -30,9 +30,14 @@ guessBtn.addEventListener('click', () => {
   let guess = parseInt(guessInput.value);
 
   // validate
-  if(guess === NaN || guess < min || guess > max) {
+  if(isNaN(guess) || guess < min || guess > max) {
     setMessage(`Please enter a number between ${min} and ${max}`);
   }
 
   // console.log(guess);
 })
+
+// set message
+function setMessage(msg) {
+  message.textContent = msg;
+}
